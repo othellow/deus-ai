@@ -12,6 +12,7 @@ Responsibilities:
 - Validate HTTP responses
 - Generate output filenames
 - Save raw HTML
+- Discover article links
 - Return raw HTML
 
 Parsing and content extraction are intentionally handled
@@ -25,6 +26,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 import requests
+from bs4 import BeautifulSoup
 
 from crawler.config import (
     BLOG_URL,
@@ -179,6 +181,35 @@ class BlogCrawler:
 
                 time.sleep(RETRY_DELAY)
 
+    def discover_article_links(self, html: str) -> list[str]:
+        """
+        Discover article URLs from the blog homepage.
+
+        Args:
+            html:
+                Raw HTML of the homepage.
+
+        Returns:
+            Sorted list of unique article URLs.
+        """
+
+        soup = BeautifulSoup(html, "lxml")
+
+        article_links: set[str] = set()
+
+        for link in soup.find_all("a", href=True):
+
+            href = link["href"]
+
+            if href.startswith(BLOG_URL) and href.endswith(".html"):
+                article_links.add(href)
+
+        links = sorted(article_links)
+
+        logger.info("Discovered %d article links.", len(links))
+
+        return links
+
 
 def main() -> None:
     """
@@ -189,10 +220,18 @@ def main() -> None:
 
     html = crawler.fetch_page(BLOG_URL)
 
-    print("\nFirst 500 characters of downloaded HTML:\n")
-    print(html[:500])
+    links = crawler.discover_article_links(html)
+
+    print("\nDiscovered Articles\n")
+
+    for index, link in enumerate(links, start=1):
+        print(f"{index:02d}. {link}")
+
+    print(f"\nTotal articles discovered: {len(links)}")
 
 
 if __name__ == "__main__":
     main()
+
+
     
