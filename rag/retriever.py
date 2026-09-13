@@ -5,10 +5,10 @@ DEUS AI - RAG Knowledge Engine
 Retriever responsible for semantic search
 using ChromaDB.
 
-Sprint 3 Scope
+Sprint 5 Enhancement
 
 - Load embedding model
-- Embed user query
+- Automatically rebuild ChromaDB if missing
 - Search ChromaDB
 - Return top semantic matches
 """
@@ -32,6 +32,11 @@ class Retriever:
     def __init__(self) -> None:
         """
         Load embedding model and ChromaDB.
+
+        If the Chroma collection does not exist
+        (for example on a fresh Railway deployment),
+        automatically rebuild it from the embedding
+        JSON files.
         """
 
         print("=" * 60)
@@ -51,9 +56,33 @@ class Retriever:
             ),
         )
 
-        self.collection = self.client.get_collection(
-            COLLECTION_NAME
-        )
+        try:
+
+            self.collection = self.client.get_collection(
+                COLLECTION_NAME
+            )
+
+            print("✓ Existing Chroma collection found.")
+
+        except Exception:
+
+            print("=" * 60)
+            print("No Chroma collection found.")
+            print("Building knowledge base from embedding files...")
+            print("=" * 60)
+
+            from rag.vectordb import VectorDatabase
+
+            db = VectorDatabase()
+
+            db.load_all()
+
+            self.collection = self.client.get_collection(
+                COLLECTION_NAME
+            )
+
+            print()
+            print("✓ Knowledge base created successfully.")
 
         print(
             f"Knowledge Base Size: "
@@ -156,5 +185,6 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
     

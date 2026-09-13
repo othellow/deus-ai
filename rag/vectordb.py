@@ -4,12 +4,12 @@ DEUS AI - RAG Knowledge Engine
 
 Stores semantic embeddings inside ChromaDB.
 
-Sprint 3 Scope
+Sprint 5 Enhancement
 
 - Load embedding JSON files
 - Store embeddings in ChromaDB
 - Skip duplicate vectors
-- Maintain persistent knowledge base
+- Automatically rebuild knowledge base
 """
 
 import json
@@ -38,14 +38,14 @@ class VectorDatabase:
         self.client = chromadb.PersistentClient(
             path=str(CHROMA_DIR),
             settings=Settings(
-                anonymized_telemetry=False
+                anonymized_telemetry=False,
             ),
         )
 
         self.collection = self.client.get_or_create_collection(
             name=COLLECTION_NAME,
             metadata={
-                "description": "BillyMacDeus Knowledge Base"
+                "description": "BillyMacDeus Knowledge Base",
             },
         )
 
@@ -106,6 +106,11 @@ class VectorDatabase:
         embedding_files = sorted(
             CHUNKS_DIR.glob("*_embeddings.json")
         )
+
+        if not embedding_files:
+            raise RuntimeError(
+                f"No embedding JSON files were found in: {CHUNKS_DIR}"
+            )
 
         total = 0
 
