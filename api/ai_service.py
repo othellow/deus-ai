@@ -8,25 +8,12 @@ Handles communication with the OpenAI Responses API.
 import os
 
 from dotenv import load_dotenv
-from openai import OpenAI
-from openai import APIError
-from openai import RateLimitError
+from openai import OpenAI, RateLimitError
+from openai import OpenAIError
 
 from crawler.config import OPENAI_MODEL
 
-# ------------------------------------------------------------------
-# Load environment variables
-# ------------------------------------------------------------------
-
 load_dotenv()
-
-# ------------------------------------------------------------------
-# Initialize OpenAI client
-# ------------------------------------------------------------------
-
-client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY"),
-)
 
 
 class AIService:
@@ -34,23 +21,44 @@ class AIService:
     Generates responses using the OpenAI Responses API.
     """
 
+    def __init__(self) -> None:
+        """
+        Lazily initialize the OpenAI client.
+
+        This prevents GitHub Actions and unit tests from
+        failing simply by importing this module.
+        """
+
+        api_key = os.getenv("OPENAI_API_KEY")
+
+        self.client = (
+            OpenAI(api_key=api_key)
+            if api_key
+            else None
+        )
+
     def generate(self, prompt: str) -> str:
         """
-        Send a Retrieval-Augmented Generation (RAG) prompt
-        to OpenAI and return the generated answer.
+        Generate a response from OpenAI.
         """
+
+        if self.client is None:
+
+            return (
+                "DEUS AI is not configured. "
+                "Missing OPENAI_API_KEY."
+            )
 
         try:
 
-            response = client.responses.create(
+            response = self.client.responses.create(
                 model=OPENAI_MODEL,
                 instructions=(
                     "You are DEUS AI, the conversational companion "
-                    "for BillyMacDeus' published writings.\n\n"
-                    "Answer ONLY using the supplied context.\n"
-                    "Do not invent information.\n"
-                    "If the answer cannot be found in the supplied "
-                    "context, politely say you don't know."
+                    "for BillyMacDeus' published writings. "
+                    "Answer ONLY using the supplied context. "
+                    "If the answer is not present in the context, "
+                    "say you don't know."
                 ),
                 input=prompt,
             )
@@ -64,18 +72,14 @@ class AIService:
                 "the OpenAI API account has no remaining credits."
             )
 
-        except APIError as exc:
+        except OpenAIError as exc:
 
-            return (
-                "OpenAI API error: "
-                f"{exc}"
-            )
+            return f"OpenAI Error: {exc}"
 
         except Exception as exc:
 
             return (
-                "DEUS AI encountered an unexpected error: "
-                f"{exc}"
+                f"DEUS AI encountered an unexpected error: {exc}"
             )
         
         

@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: "3.14"
 
-      - name: Cache pip
+      - name: Cache pip packages
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
@@ -41,12 +41,20 @@ jobs:
         run: |
           pytest
 
-      - name: Validate FastAPI Imports
+      - name: Validate FastAPI Import
         run: |
-          python -c "from api.app import app; print('FastAPI app loaded successfully')"
+          python -c "from api.app import app; print('✅ FastAPI app imported successfully')"
 
-      - name: Validate RAG Engine
+      - name: Validate API Routes
         run: |
-          python -c "from rag.rag_engine import RAGEngine; print('RAG Engine loaded successfully')"
+          python -c "from api.routes import router; print('✅ API routes imported successfully')"
+
+      - name: Validate Chat Service
+        run: |
+          python -c "from api.services import ChatService; print('✅ Chat service imported successfully')"
+
+      - name: Validate AI Service
+        run: |
+          python -c "from api.ai_service import AIService; print('✅ AI service imported successfully')"
 
           
