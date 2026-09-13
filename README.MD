@@ -6,69 +6,167 @@ DEUS AI is a Retrieval-Augmented Generation (RAG) conversational AI platform bui
 
 This project was developed as part of the Quantic School of Business and Technology Capstone Project using Agile Scrum methodology.
 
+# Overview
+
+DEUS AI is a Retrieval-Augmented Generation (RAG) application that transforms the BillyMacDeus Blog into an intelligent conversational knowledge base.
+
+Instead of manually searching through hundreds of blog articles, readers can ask questions in natural language and receive AI-generated answers grounded exclusively in BillyMacDeus' published writings.
+
+The system combines semantic search, vector embeddings, ChromaDB, GPT-5, and FastAPI to deliver accurate, context-aware responses.
+
 ---
+
+
+# Live Production
+
+## BillyMacDeus Blog
+
+https://blog.billymacdeus.com
+
+DEUS AI is available through the website navigation as a dedicated page.
+
+---
+## Backend API
+
+https://deus-ai-production.up.railway.app
+
+Swagger Documentation:
+
+https://deus-ai-production.up.railway.app/docs
+
+---
+
+## Frontend
+
+https://deus-ai.bd40.workers.dev
+
 
 ## Features
 
-- AI-powered conversational interface
+- AI-powered semantic search
 - Retrieval-Augmented Generation (RAG)
-- Semantic search using Sentence Transformers
+- GPT-5 integration
 - ChromaDB vector database
-- FastAPI backend
-- Responsive web frontend
-- Automated blog ingestion pipeline
-- GitHub Actions Continuous Integration (CI)
+- SentenceTransformer embeddings
+- Automatic blog crawler
+- Markdown knowledge processing
+- FastAPI REST API
+- Responsive web interface
+- GitHub Actions CI/CD
+- Railway deployment
+- Cloudflare deployment
+- Automatic ChromaDB rebuilding
+- Embedded Blogger integration
 
 ---
 
-## Architecture
+# Technology Stack
 
-```text
+## Backend
+
+- Python
+- FastAPI
+- OpenAI Responses API
+- SentenceTransformers
+- ChromaDB
+
+---
+
+## Frontend
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+
+---
+
+## AI
+
+- GPT-5
+- all-MiniLM-L6-v2
+- Retrieval-Augmented Generation (RAG)
+
+---
+
+## Deployment
+
+- Railway
+- Cloudflare Workers
+- GitHub Actions
+
+
+---
+# Project Structure
+
+```
+deus-ai/
+
+├── api/
+│   ├── app.py
+│   ├── routes.py
+│   ├── services.py
+│   ├── ai_service.py
+│   └── schemas.py
+│
+├── crawler/
+│
+├── rag/
+│   ├── retriever.py
+│   ├── rag_engine.py
+│   └── vectordb.py
+│
+├── frontend/
+│   ├── index.html
+│   ├── styles.css
+│   ├── app.js
+│   └── assets/
+│
+├── data/
+│
+├── tests/
+│
+├── docs/
+│
+└── requirements.txt
+```
+
+
+
+---
+
+# System Architecture
+
+```
 BillyMacDeus Blog
         │
         ▼
-Crawler
+Cloudflare Frontend
         │
         ▼
-Raw HTML
+Railway FastAPI
         │
         ▼
-Parser
-        │
-        ▼
-Cleaner
-        │
-        ▼
-Markdown Exporter
-        │
-        ▼
-Chunker
-        │
-        ▼
-Embedding Generator
-        │
-        ▼
-ChromaDB
-        │
-        ▼
-Retriever
+Chat Service
         │
         ▼
 RAG Engine
         │
         ▼
+Retriever
+        │
+        ▼
+ChromaDB
+        │
+        ▼
 GPT-5
         │
         ▼
-FastAPI
-        │
-        ▼
-Frontend
+Response
 ```
 
 ---
 
-# Technology Stack
+# Technology Stack Summary
 
 | Layer | Technology |
 |--------|------------|
@@ -137,6 +235,89 @@ Current knowledge base:
 | Semantic Chunks | 4521 |
 | Embeddings | 4521 |
 | ChromaDB Vectors | 4521 |
+
+---
+
+# Automatic Knowledge Base Initialization
+
+Fresh cloud deployments do not contain an existing ChromaDB vector database.
+
+DEUS AI automatically detects when the knowledge base is unavailable and rebuilds the vector collection from the embedding JSON files.
+
+This allows deployments to remain reproducible without storing generated database files in source control.
+
+Workflow:
+
+```
+Application Startup
+
+        │
+
+        ▼
+
+Collection Exists?
+
+        │
+
+   Yes ─────────► Continue
+
+        │
+
+       No
+
+        │
+
+        ▼
+
+Load Embedding JSON Files
+
+        │
+
+        ▼
+
+Rebuild ChromaDB
+
+        │
+
+        ▼
+
+Serve Requests
+```
+
+---
+
+# Continuous Integration
+
+GitHub Actions automatically performs:
+
+- Dependency installation
+- Unit testing
+- FastAPI validation
+- RAG engine validation
+
+Every commit to the main branch is automatically verified before deployment.
+
+---
+
+# Production Deployment
+
+Backend
+
+- Railway
+
+Frontend
+
+- Cloudflare
+
+Website
+
+- BillyMacDeus Blog
+
+Deployment is fully automated through GitHub.
+
+---
+
+
 
 ---
 
@@ -307,17 +488,21 @@ The project was delivered using four Agile Scrum sprints.
 - Deployment preparation
 
 ---
+## Sprint 5
 
-# Screenshots
+### Production Deployment
 
-Suggested repository screenshots:
+Completed
 
-- Frontend interface
-- FastAPI Swagger UI
-- Knowledge pipeline execution
-- ChromaDB indexing
-- GitHub Actions
-- Conversation example
+Deliverables
+
+- Railway backend deployment
+- Cloudflare frontend deployment
+- GitHub automated deployment
+- Automatic ChromaDB initialization
+- Production API
+- Blogger integration
+- Live production release
 
 ---
 
@@ -337,17 +522,13 @@ Planned enhancements include:
 
 ---
 
-# License
-
-This project is intended for educational and research purposes as part of the Quantic School of Business and Technology Capstone Project.
-
----
-
 # Author
 
-**BillyMacDeus**
+** Billy Mac Deus **
 
 Writer • Technologist • AI Enthusiast
+owner of BillyMacDeus Blog
+https://blog.billymacdeus.com
 
 ---
 
@@ -364,3 +545,18 @@ BADGES:
 ![ChromaDB](https://img.shields.io/badge/Vector%20DB-ChromaDB-purple)
 
 ![License](https://img.shields.io/badge/License-Educational-orange)
+
+
+# Academic Information
+
+Capstone Project
+
+Master of Science in Software Engineering
+
+Quantic School of Business and Technology
+
+2026
+
+# License
+
+This project is intended for educational and research purposes as part of the Quantic MSSE Capstone Project.

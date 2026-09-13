@@ -1,0 +1,114 @@
+# Sprint 5
+## Production Deployment and Website Integration
+
+Duration:
+Sprint 5
+
+---
+
+## Sprint Goal
+
+Deploy DEUS AI into a cloud production environment and integrate it with the BillyMacDeus Blog.
+
+---
+
+## User Stories
+
+### US-011
+
+As a blog reader,
+
+I want to access DEUS AI online,
+
+so that I can ask questions anywhere.
+
+---
+
+### US-012
+
+As a website visitor,
+
+I want DEUS AI embedded into BillyMacDeus Blog,
+
+so that I can interact without leaving the website.
+
+---
+
+### US-013
+
+As a system administrator,
+
+I want automatic knowledge base initialization,
+
+so that deployments require no manual database setup.
+
+---
+
+## Tasks Completed
+
+- Configured Railway deployment
+- Configured Cloudflare frontend hosting
+- Configured GitHub CI/CD
+- Added production CORS configuration
+- Added OpenAI environment variables
+- Implemented automatic ChromaDB rebuilding
+- Connected frontend to Railway backend
+- Embedded frontend into Blogger
+- Performed production testing
+
+---
+
+## Technical Achievements
+
+### Cloud Deployment
+
+Backend:
+
+- Railway
+
+Frontend:
+
+- Cloudflare
+
+---
+
+### Automatic Database Recovery
+
+The application now detects when the Chroma collection is missing and automatically rebuilds it from embedding JSON files.
+
+This enables clean deployments without committing database artifacts into source control.
+
+---
+
+### Website Integration
+
+DEUS AI was successfully embedded into:
+
+https://blog.billymacdeus.com
+
+using Blogger Pages.
+
+Visitors can interact with DEUS AI directly from the website.
+
+---
+
+## Sprint Deliverables
+
+✓ Production backend
+
+✓ Production frontend
+
+✓ Cloud deployment
+
+✓ Automatic vector database rebuilding
+
+✓ Website integration
+
+✓ End-to-end production testing
+
+---
+
+## Sprint Outcome
+
+Sprint 5 transformed DEUS AI from a locally executed prototype into a fully deployed production application accessible over the Internet.
+
