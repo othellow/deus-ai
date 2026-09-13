@@ -14,8 +14,7 @@ Handles:
 ✓ Auto scroll
 ----------------------------------------------------
 */
-
-const API_URL = "http://127.0.0.1:8000/api/v1/chat";
+const API_URL = "https://deus-ai-production.up.railway.app/api/v1/chat";
 
 const chatWindow = document.getElementById("chat-window");
 const questionBox = document.getElementById("question");
