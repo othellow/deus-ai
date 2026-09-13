@@ -1,0 +1,19 @@
+# Undisturbed sleep
+
+**Author:** 
+
+**Published:** 2026-09-14
+
+**Categories:** 
+
+**Tags:** 
+
+**Source:** https://blog.billymacdeus.com/
+
+---
+
+It's almost a week now, that im getting undisturbed slumber giving a fresh feeling after i wake up in the morning. I could feel my nerves stunning with eagerness to meet what the day has to offer. Really, i'm quite delighted by these thoughts and how i feel lately. The last time i felt this was the last time i was in love. (lolz)
+I tell you though that, that is not the case right now. i'm still speculating what is causing this enormous joy oozing outta me. I could remember that i started detoxifying my body cuz i read one article some time last week about eating fruits with an empty stomach. I guess! that could be causing it huh?!
+Like, even before eating my lunch i simply make time to eat one apple or banana and i wait for 20-30 minutes before attacking my main course. That same procedure is done after i wake up in the morning, gulping my 1 glass of water first and then cook for my breakfast, eating one fruit, head straight to the shower and then have my full breakfast. Finally, same thing's happening before dinner, 1 or 2 fruits munching before the main course.
+Additionally, the timeframe between eating the fruit and eating the main course does also matter. this has managed me to subside my hunger and appetite.
+i'm not promoting this but i just wanna share to you. It gave me wonders and my gut feeling says, it's really IT that's giving the fresh feeling in the early morning to start my day. ;)

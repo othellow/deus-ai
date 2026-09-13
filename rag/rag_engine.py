@@ -1,15 +1,14 @@
-
 """
 DEUS AI - RAG Knowledge Engine
 ------------------------------
 
 Builds an LLM-ready prompt from retrieved blog content.
 
-Sprint 2 Scope:
+Sprint 3 Scope
 
-- Retrieve relevant blog chunks
-- Assemble prompt
-- Return complete context for an LLM
+- Retrieve relevant semantic chunks
+- Assemble LLM prompt
+- Return context grounded in BillyMacDeus' writings
 """
 
 from rag.retriever import Retriever
@@ -21,6 +20,10 @@ class RAGEngine:
     """
 
     def __init__(self) -> None:
+        """
+        Initialize the semantic retriever.
+        """
+
         self.retriever = Retriever()
 
     def build_prompt(
@@ -29,7 +32,7 @@ class RAGEngine:
         top_k: int = 5,
     ) -> str:
         """
-        Build an LLM prompt using retrieved context.
+        Build an LLM prompt from the retrieved context.
         """
 
         results = self.retriever.search(
@@ -38,18 +41,37 @@ class RAGEngine:
         )
 
         documents = results["documents"][0]
-        metadata = results["metadatas"][0]
+        metadatas = results["metadatas"][0]
+        distances = results["distances"][0]
 
         context = []
 
-        for doc, meta in zip(documents, metadata):
+        for doc, meta, distance in zip(
+            documents,
+            metadatas,
+            distances,
+        ):
+
+            similarity = max(
+                0.0,
+                1.0 - distance,
+            )
 
             context.append(
                 f"""
+============================================================
+
 Source:
 {meta['source']}
 
+Chunk:
+{meta['chunk_id']}
+
+Similarity:
+{similarity:.4f}
+
 Content:
+
 {doc}
 """
             )
@@ -57,49 +79,63 @@ Content:
         prompt = f"""
 You are DEUS AI.
 
-You answer questions ONLY using BillyMacDeus'
-published writings.
+You are the AI companion for BillyMacDeus' writings.
 
-If the answer cannot be found in the supplied
-context, politely say you don't know.
+Use ONLY the supplied context below.
 
-=========================
+Do not invent facts.
+
+If the answer cannot be found in the supplied context,
+reply politely that the information is not available in
+BillyMacDeus' published writings.
+
+============================================================
 QUESTION
-=========================
+============================================================
 
 {question}
 
-=========================
+============================================================
 CONTEXT
-=========================
+============================================================
 
-{"".join(context)}
+{''.join(context)}
 
-=========================
+============================================================
 ANSWER
-=========================
+============================================================
 """
 
         return prompt.strip()
 
 
-def main():
+def main() -> None:
+    """
+    Manual RAG engine test.
+    """
 
     engine = RAGEngine()
 
-    question = input("Ask DEUS AI: ")
+    while True:
 
-    print()
+        print()
 
-    prompt = engine.build_prompt(question)
+        question = input(
+            "Ask DEUS AI (type 'exit' to quit): "
+        )
 
-    print("=" * 70)
+        if question.lower() == "exit":
+            break
 
-    print("LLM PROMPT")
+        prompt = engine.build_prompt(question)
 
-    print("=" * 70)
+        print()
+        print("=" * 70)
+        print("LLM PROMPT")
+        print("=" * 70)
+        print()
 
-    print(prompt)
+        print(prompt)
 
 
 if __name__ == "__main__":

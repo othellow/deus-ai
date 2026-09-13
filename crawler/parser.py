@@ -5,12 +5,15 @@ DEUS AI - Blog Ingestion Pipeline
 Parser module responsible for converting Blogger HTML
 into structured BlogPost objects.
 
-Sprint 1 Scope:
-- Parse homepage HTML
-- Extract visible blog post previews
+Sprint 3.5 Scope:
+
+- Parse individual HTML files
+- Parse all downloaded HTML files
+- Extract blog post metadata
 - Create BlogPost objects
 """
 
+import re
 from datetime import date
 from pathlib import Path
 
@@ -35,9 +38,39 @@ class BlogParser:
 
         return BeautifulSoup(html, "lxml")
 
+    def generate_slug(self, title: str) -> str:
+        """
+        Generate a filesystem-safe slug from a title.
+        """
+
+        slug = title.lower()
+
+        # Replace anything that's not a-z or 0-9 with "-"
+        slug = re.sub(
+            r"[^a-z0-9]+",
+            "-",
+            slug,
+        )
+
+        # Remove duplicate hyphens
+        slug = re.sub(
+            r"-+",
+            "-",
+            slug,
+        )
+
+        # Remove leading/trailing hyphens
+        slug = slug.strip("-")
+
+        # Fallback in case title becomes empty
+        if not slug:
+            slug = "untitled-post"
+
+        return slug
+
     def parse(self, html_file: Path) -> list[BlogPost]:
         """
-        Parse the homepage HTML and extract all visible posts.
+        Parse a Blogger HTML page and extract all visible posts.
 
         Args:
             html_file:
@@ -52,30 +85,26 @@ class BlogParser:
         posts: list[BlogPost] = []
 
         article_titles = soup.select("h3.post-title.entry-title")
-
         article_bodies = soup.select("div.post-body.entry-content")
-
         article_authors = soup.select("span.post-author.vcard")
-
         article_dates = soup.select("span.post-timestamp")
-
         article_labels = soup.select("span.post-labels")
 
         total_posts = len(article_titles)
 
         for index in range(total_posts):
 
-            # -----------------------------
+            # -------------------------------------------------
             # Title
-            # -----------------------------
+            # -------------------------------------------------
 
             title = article_titles[index].get_text(
                 strip=True
             )
 
-            # -----------------------------
+            # -------------------------------------------------
             # Body
-            # -----------------------------
+            # -------------------------------------------------
 
             body = ""
 
@@ -94,9 +123,9 @@ class BlogParser:
                     if img.get("src")
                 ]
 
-            # -----------------------------
+            # -------------------------------------------------
             # Author
-            # -----------------------------
+            # -------------------------------------------------
 
             author = "Unknown"
 
@@ -106,20 +135,20 @@ class BlogParser:
                     strip=True
                 )
 
-            # -----------------------------
+            # -------------------------------------------------
             # Publish Date
-            # -----------------------------
+            # -------------------------------------------------
 
             publish_date = date.today()
 
             if index < len(article_dates):
-                # Sprint 1 placeholder.
-                # Blogger stores dates as text.
+                # Future enhancement:
+                # Parse Blogger date text.
                 pass
 
-            # -----------------------------
+            # -------------------------------------------------
             # Labels
-            # -----------------------------
+            # -------------------------------------------------
 
             labels: list[str] = []
 
@@ -130,15 +159,15 @@ class BlogParser:
                     for label in article_labels[index].find_all("a")
                 ]
 
-            # -----------------------------
+            # -------------------------------------------------
             # Slug
-            # -----------------------------
+            # -------------------------------------------------
 
-            slug = title.lower().replace(" ", "-")
+            slug = self.generate_slug(title)
 
-            # -----------------------------
+            # -------------------------------------------------
             # URL
-            # -----------------------------
+            # -------------------------------------------------
 
             article_link = ""
 
@@ -148,9 +177,9 @@ class BlogParser:
 
                 article_link = link.get("href", "")
 
-            # -----------------------------
+            # -------------------------------------------------
             # Build BlogPost
-            # -----------------------------
+            # -------------------------------------------------
 
             metadata = BlogMetadata(
                 title=title,
@@ -159,7 +188,8 @@ class BlogParser:
                 publish_date=publish_date,
                 categories=labels,
                 tags=labels,
-                source_url=article_link or "https://blog.billymacdeus.com/",
+                source_url=article_link
+                or "https://blog.billymacdeus.com/",
             )
 
             content = BlogContent(
@@ -178,6 +208,57 @@ class BlogParser:
 
         return posts
 
+    def parse_all(self, raw_dir: Path) -> list[BlogPost]:
+        """
+        Parse every HTML file inside the raw directory.
+
+        Args:
+            raw_dir:
+                Directory containing downloaded HTML files.
+
+        Returns:
+            Combined list of BlogPost objects.
+        """
+
+        all_posts: list[BlogPost] = []
+
+        html_files = sorted(raw_dir.glob("*.html"))
+
+        print("=" * 60)
+        print("DEUS AI Parser")
+        print("=" * 60)
+        print(f"HTML files found: {len(html_files)}")
+        print()
+
+        for html_file in html_files:
+
+            try:
+
+                posts = self.parse(html_file)
+
+                all_posts.extend(posts)
+
+                print(
+                    f"✓ {html_file.name:<45}"
+                    f"{len(posts)} post(s)"
+                )
+
+            except Exception as exc:
+
+                print(
+                    f"✗ Failed: {html_file.name}"
+                )
+
+                print(exc)
+
+        print()
+        print("=" * 60)
+        print("Parsing Complete")
+        print("=" * 60)
+        print(f"Total BlogPosts: {len(all_posts)}")
+
+        return all_posts
+
 
 def main() -> None:
     """
@@ -186,31 +267,21 @@ def main() -> None:
 
     parser = BlogParser()
 
-    posts = parser.parse(
-        Path("data/raw/homepage.html")
+    posts = parser.parse_all(
+        Path("data/raw")
     )
 
+    print()
     print("=" * 60)
-    print("DEUS AI - Parser Results")
+    print("Preview")
     print("=" * 60)
 
-    print(f"Posts discovered: {len(posts)}")
+    for index, post in enumerate(posts[:5], start=1):
 
-    for index, post in enumerate(posts, start=1):
+        print(f"{index}. {post.metadata.title}")
 
-        print("\n--------------------------------------")
-
-        print(f"Post #{index}")
-
-        print(f"Title      : {post.metadata.title}")
-
-        print(f"Author     : {post.metadata.author}")
-
-        print(f"Labels     : {post.metadata.categories}")
-
-        print(f"Images     : {len(post.content.images)}")
-
-        print(f"Body Length: {len(post.content.body)} characters")
+    print()
+    print(f"Total parsed BlogPosts: {len(posts)}")
 
 
 if __name__ == "__main__":

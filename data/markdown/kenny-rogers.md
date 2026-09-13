@@ -1,0 +1,19 @@
+# Kenny Rogers
+
+**Author:** 
+
+**Published:** 2026-09-14
+
+**Categories:** 
+
+**Tags:** 
+
+**Source:** https://blog.billymacdeus.com/
+
+---
+
+Aim at heaven and you will get earth thrown in. Aim at earth and you get neither.
+C. S. Lewis
+I know there's no way to go by posting this without me sounding emo or mushy (no pun intended), but really it isn't my intention and resolve. It's just that it feels good in listening to this song.
+It's a beautiful song for your heart. Ain't it?
+~mAc

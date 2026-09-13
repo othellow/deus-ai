@@ -1,0 +1,12 @@
+[
+    {
+        "chunk_id": 0,
+        "source": "how-save-battery-in-ios7.md",
+        "text": "# How Save Battery in iOS7?\n\n**Author:** \n\n**Published:** 2026-09-14\n\n**Categories:** \n\n**Tags:** \n\n**Source:** https://blog.billymacdeus.com/\n\n---\n\nBattery juice plays a vital role in smartphones, it's the blood and oxygen of every gadget.\nIn my 6 days of using iOS 7, there's no denying that it's a battery vampire.\nI've been checking blogs, news and comments on how to mitigate this, so far, these are the top two drivers in patching this issue.\n1. Turn On the \"Reduce Motion\" option under Setting"
+    },
+    {
+        "chunk_id": 1,
+        "source": "how-save-battery-in-ios7.md",
+        "text": " are the top two drivers in patching this issue.\n1. Turn On the \"Reduce Motion\" option under Settings - General - Accessibility\nSomehow, this shiny parallax effect drains your batt easily.\n2. Adjust your screen brightness. Don't set it to auto-adjust. Maintain the slider at the minimum (closest to the left).\n"
+    }
+]

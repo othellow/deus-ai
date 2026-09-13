@@ -1,0 +1,25 @@
+# Iglesia Ni Cristo (96th Anniversary)
+
+**Author:** 
+
+**Published:** 2026-09-14
+
+**Categories:** 
+
+**Tags:** 
+
+**Source:** https://blog.billymacdeus.com/
+
+---
+
+"Consider the momentous event in architecture when the wall parted and the column became"
+~Loius Kahn
+27th of July is no ordinary day for any member of the Church of Christ, a.k.a. Iglesia Ni Cristo which was reestablished in the Philippine archipelago back in 1914. Today, the church worldwide is commemorating on its 96th anniversary.
+It was last year (2009) when President Gloria Macapagal Arroyo declared July 27 as Iglesia Ni Cristo Day and every year thereafter signifying a special working holiday in the country in recognition to the founding of the church. This was signed into law via the Republic Act 9645.
+Looking back and reminiscing on the church' humbly beginnings, the obvious was inevitable, persecution and maltreatment were so much rampant in the early days of the Church of Christ. T'was like you were being outcasted entirely must people know that you belong to this religion. Worship Services were stoned, despised, and bluntly speaking - most people would give a murderous remark as if to belong in the fold is an original sin.
+However, members did not waver in their calling. Early members shrugged off the inequalities they get during that early stage. They never faltered to deliver and all the more they become steadfast in the church. Time is the greatest healer they say, and the generation of this age are now reaping the sacrifices, conviction, hope and unmatched beliefs of the pioneers of the Iglesia Ni Cristo, led by the late Bro. Felix Manalo.
+Look at the church today! It's almost on its Centennial anniversary... and the glory it beheld is quite stunning and remarkable. Not only by its proliferation of magnificent & breath-taking chapels mushrooming around the isles of the Philippines but the core values it has continued to impart among the followers of the faithful.
+It is indeed, unbelievable for the mundane on how this church has achieved on what it has right now. The titanic expansion of its growth, conquering the different continents of the earth is something ala- "more-than-meets-the-eye" concept. Wonders among wonders, this church keeps on inspiring lives, keeps on shedding the true light in this world of darkness and chaos.
+I want to extend my deepest and heartfelt greetings to all the members of the Church of Christ in all the corners of universe. Anywhere you are, if you are reading this, keep the faith!
+Glory be to God. Happy 96th Anniversary!!!
+~mAc

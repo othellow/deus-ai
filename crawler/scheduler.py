@@ -1,55 +1,76 @@
 """
-DEUS AI - Blog Ingestion Pipeline
----------------------------------
+DEUS AI Scheduler
+-----------------
 
-Scheduler responsible for periodically running
-the blog ingestion pipeline.
-
-Sprint 1 Scope:
-- Schedule weekly ingestion
-- Demonstrate scheduled execution
+Runs the DEUS AI Knowledge Ingestion Pipeline
+on a recurring schedule.
 """
 
-import time
-
 import schedule
+import time
+from datetime import datetime
 
-from crawler.config import BLOG_URL
-from crawler.crawler import BlogCrawler
+# Temporary for Sprint 3.5
+# Eventually this will become:
+#
+# from pipeline.ingest import run_pipeline
+#
+# For now we continue using the crawler until
+# the ingestion pipeline is completed.
+
+from crawler.crawler import main as crawl_blog
 
 
-def run_ingestion() -> None:
+def run_pipeline():
     """
-    Execute the blog crawler.
+    Execute the DEUS AI knowledge update.
+    """
+
+    print()
+    print("=" * 60)
+    print("DEUS AI Knowledge Refresh")
+    print("=" * 60)
+
+    print(
+        f"Started : {datetime.now():%Y-%m-%d %H:%M:%S}"
+    )
+
+    crawl_blog()
+
+    print(
+        f"Finished: {datetime.now():%Y-%m-%d %H:%M:%S}"
+    )
+
+    print("=" * 60)
+    print()
+
+
+def main():
+    """
+    Schedule the ingestion pipeline.
     """
 
     print("=" * 60)
     print("DEUS AI Scheduler")
     print("=" * 60)
 
-    crawler = BlogCrawler()
+    print()
 
-    crawler.fetch_page(BLOG_URL)
+    print("Knowledge refresh scheduled every 7 days.")
 
-    print("Blog crawl completed.")
+    print()
 
+    # Every 7 days
+    schedule.every(7).days.do(run_pipeline)
 
-def main() -> None:
-    """
-    Configure the scheduler.
-    """
-
-    print("Starting scheduler...")
-
-    # Sprint 1 Demo:
-    # Run every 10 seconds instead of weekly.
-    schedule.every(10).seconds.do(run_ingestion)
-
-    print("Press CTRL+C to stop.\n")
+    # Run once immediately
+    run_pipeline()
 
     while True:
+
         schedule.run_pending()
-        time.sleep(1)
+
+        time.sleep(30)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,33 @@
+# Taralets Bagets... Anyare sa February 2020 Ko?
+
+**Author:** 
+
+**Published:** 2026-09-14
+
+**Categories:** 
+
+**Tags:** 
+
+**Source:** https://blog.billymacdeus.com/
+
+---
+
+February 2020, a month where most of my days were on offline mode because, on a personal level, i was so involved "ïntensely" at work and at church.
+That is why, if you're wonderin?, i only have one (1) blog post for February.
+It was a month of accidents, passions, and fervent hopes of faith, and at times, of losing hope:
+- a month of business at work - that even weekends, i have to jump in to escalations and work activities, client initiated changes and other things important for the business to run.
+- a month where it required me to be present on our daily devotional prayer at church as early as 5:00 AM Manila Time.
+- a month where cramped schedules need to be unhinged in order for my priorities to be accomplished, giving up some opportunities which could have given me chances to further my work expertise but in the end, these were non-regrets from my part, because i chose what is closest and meaningful to my heart.
+- it was also a month of unforeseen circumstances where it almost made me lose hope, maybe because leading the procession (church thing) was almost bailed due to an accident that could've jeopardize me walking the side aisle going to the choir loft.
+it was a lost in translation at the start after getting my foot scraped falling from a retractable ladder while cleaning cobwebs. Aye! of all the times, like bisperas of BNH, i ran into an accident, and my foot (my primary tool to use for the BNH procession) was suddenly at stake!
+but as my close friend tried to accompany me in the hospital, XRays and all, i made a firm resolve that this shouldn't hinder me from doing the procession of our Holy Supper.
+(what's the mefenamic acids doing?) Nyahahahaha! I chuckled as i remember all these.
+True to my promise, the day after my accident, i fulfilled my duty in the choir and led the processional with my foot injured.
+It was a glorious experienced - church duty and event wise.
+The 2nd round of me doing the procession at 6AM Sunday last Feb 23 was even more glorious. The pouring of the holy spirit through and through is unwavering. I'm at a loss with words to further expound in detail.
+The 3rd round (my final) fulfillment of duty in the choir, still leading the procession for the BNH was one of the most unforgettable experience I have ever had to date. It was an English Worship Service, and from the devotional prayer coursing through the singing of the hymn for the fruit of the juice of the vine were exceptionally spiritual, filled with grace, and the power of the holy spirit was so intensely felt.
+Those experiences were the highlights of my February. As i came to reflect - it was magically placed like, at first the missing pieces are nowehere to be found and when it's over, the puzzle was complete.
+Giving me a sigh of relief.
+I felt at peace, clean, and most of all edified - at all angles on my perspective of this life.
+I wanted to close this post, saying my murmurs of prayer, a thankful heart, and conveying my gratitude for The One.
+ˆbillymacdeus

@@ -1,0 +1,27 @@
+# Respect Other People's Way Of Thinking
+
+**Author:** 
+
+**Published:** 2026-09-14
+
+**Categories:** 
+
+**Tags:** 
+
+**Source:** https://blog.billymacdeus.com/
+
+---
+
+(updated December 2024)
+In life, we often hear phrases like, “We’re all unique,” or “Everyone thinks differently.” But how often do we truly respect other people’s way of thinking? Let’s face it: madalas, kapag hindi tugma sa pananaw natin ang isang bagay, our first instinct is to judge or dismiss it. Yet, the truth is, there are many ways to arrive at the same outcome. Just like how 6+3=9 is the same as 5+4=9, different paths can still lead to the same destination.
+Think about this: how many times have you disagreed with a friend, a colleague, or even a family member because their approach to solving a problem was different from yours? Maybe you’re the type who likes to plan every detail, while your best friend prefers to “go with the flow.” Or perhaps you’re straightforward, but your coworker likes to analyze every angle before making a decision. Ang tendency natin minsan is to think, “Why can’t they just do it my way? Mas mabilis!” But here’s the catch: their way isn’t necessarily wrong. It’s just different. And that difference doesn’t make it any less valid.
+For Gen Z and Millennials, this hits home because we’re living in an era of rapid change and diverse perspectives. Social media has amplified everyone’s voices, making it easier than ever to share opinions but also to clash over them. Whether it’s about politics, career choices, or how to live sustainably, it’s clear na ang daming iba’t ibang pananaw sa mundo. The question is: Are we listening to understand, or are we listening to argue?
+Take problem-solving as an example. Imagine you’re in a group project—yes, the dreaded group project! One person wants to divide the tasks equally, while another suggests working together on every step. At first, this might lead to tension. But when you step back, you’ll realize that both approaches have merit. Dividing tasks ensures efficiency, while working together ensures consistency. When you combine these methods, you’re likely to produce the best results.
+Now, apply this to real-life situations. Let’s say you and your sibling have different ways of managing money. You like to save meticulously, while they’re more about investing in opportunities. Instead of saying, “Ang gastos mo naman,” or “Ang kuripot mo kasi,” why not acknowledge that both strategies have their strengths? Saving builds security, while investing opens doors to growth. When you learn to respect and even integrate these approaches, you both win.
+Even in deeper matters, like values or beliefs, the principle still applies. For instance, in Filipino culture, respecting elders (“utang na loob” or “paggalang”) is deeply ingrained. But modern perspectives, especially from Gen Zs, might lean towards questioning traditional norms to promote individuality and fairness. Instead of dismissing one as “old-fashioned” or the other as “rebellious,” what if we viewed these perspectives as complementary? Traditions can provide grounding, while modern thinking can drive progress. Magkasama silang pwedeng magtulungan.
+But respecting other people’s way of thinking doesn’t mean you have to agree with everything. Hindi ibig sabihin nito na tanggapin mo na lang kahit mali. Respect means being open to understanding why someone thinks or acts a certain way, even if it’s different from what you’d do. It’s about empathy. Kapag nakita mo kung saan sila nanggagaling, mas madali mong maiintindihan na ang intention nila isn’t to oppose you but to offer another perspective.
+Here’s a practical example that most of us can relate to: career paths. Some people thrive in a corporate setup, working a 9-to-5, climbing the ladder, and finding stability. Others choose the path of entrepreneurship, embracing the risks and rewards of building something from scratch. Then there are those who go the unconventional route, like freelancing or pursuing their passion projects. Sa mata ng iba, “playing it safe” ang corporate, “masyadong risky” ang entrepreneurship, at “impractical” ang passion projects. But who’s to say which path is better? Each one has its own challenges and rewards. What’s important is that the person walking the path feels fulfilled.
+Respecting other people’s way of thinking also applies to how we handle conflicts. Instead of immediately reacting with, “That’s wrong,” try saying, “I see where you’re coming from, but here’s another way to look at it.” This simple shift in language can turn a heated debate into a meaningful conversation. Remember, it’s not about who’s right or wrong; it’s about finding common ground.
+In the end, life isn’t a one-size-fits-all journey. Just because someone thinks differently doesn’t mean they’re against you. Instead of focusing on differences as barriers, let’s see them as bridges. After all, 6+3=9, and so does 5+4=9. Both are correct. Both matter. And both teach us that there’s more than one way to solve a problem, live a life, or make an impact.
+So, the next time you encounter someone whose way of thinking challenges yours, take a step back and ask: “What can I learn from their perspective?” In doing so, you’re not just respecting their way of thinking—you’re growing in ways you never thought possible. And that, my friends, is the beauty of embracing diversity in thought.
+~billymacdeus

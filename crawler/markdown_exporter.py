@@ -5,9 +5,12 @@ DEUS AI - Blog Ingestion Pipeline
 Markdown exporter responsible for converting BlogPost
 objects into Markdown and JSON metadata files.
 
-Sprint 1 Scope:
-- Export one Markdown file per BlogPost
-- Export one metadata JSON per BlogPost
+Sprint 3.5 Scope:
+
+- Export individual BlogPosts
+- Export multiple BlogPosts
+- Generate Markdown
+- Generate JSON metadata
 """
 
 import json
@@ -59,26 +62,34 @@ class MarkdownExporter:
             "source_url": str(post.metadata.source_url),
         }
 
-        output_file = METADATA_DIR / f"{post.metadata.slug}.json"
+        output_file = (
+            METADATA_DIR /
+            f"{post.metadata.slug}.json"
+        )
 
         output_file.write_text(
-            json.dumps(metadata, indent=4, ensure_ascii=False),
+            json.dumps(
+                metadata,
+                indent=4,
+                ensure_ascii=False,
+            ),
             encoding="utf-8",
         )
 
         return output_file
 
-    def export_post(self, post: BlogPost) -> tuple[Path, Path]:
+    def export(self, post: BlogPost) -> tuple[Path, Path]:
         """
-        Export one BlogPost as Markdown and JSON metadata.
+        Export a single BlogPost.
 
         Returns:
-            Tuple containing:
-            - Markdown file path
-            - Metadata JSON path
+            Markdown file path and metadata file path.
         """
 
-        markdown_file = MARKDOWN_DIR / f"{post.metadata.slug}.md"
+        markdown_file = (
+            MARKDOWN_DIR /
+            f"{post.metadata.slug}.md"
+        )
 
         markdown_file.write_text(
             self.generate_markdown(post),
@@ -89,23 +100,53 @@ class MarkdownExporter:
 
         return markdown_file, metadata_file
 
-    def export_posts(
+    def export_all(
         self,
         posts: list[BlogPost],
     ) -> list[tuple[Path, Path]]:
         """
-        Export multiple BlogPosts.
+        Export every BlogPost in the collection.
         """
 
-        return [
-            self.export_post(post)
-            for post in posts
-        ]
+        exported: list[tuple[Path, Path]] = []
+
+        total = len(posts)
+
+        print()
+        print("=" * 60)
+        print("DEUS AI Markdown Exporter")
+        print("=" * 60)
+
+        for index, post in enumerate(posts, start=1):
+
+            exported.append(
+                self.export(post)
+            )
+
+            if (
+                index <= 5
+                or index == total
+                or index % 100 == 0
+            ):
+                print(
+                    f"✓ [{index}/{total}] "
+                    f"{post.metadata.slug}"
+                )
+
+        print()
+        print("=" * 60)
+        print("Markdown Export Complete")
+        print("=" * 60)
+
+        print(f"Markdown files : {len(exported)}")
+        print(f"Metadata files : {len(exported)}")
+
+        return exported
 
 
 def main() -> None:
     """
-    Manual exporter test.
+    Manual exporter smoke test.
     """
 
     from datetime import date
@@ -128,6 +169,8 @@ def main() -> None:
     content = BlogContent(
         body="Hello Markdown!",
         images=[],
+        cleaned_html="",
+        markdown="",
     )
 
     post = BlogPost(
@@ -137,12 +180,14 @@ def main() -> None:
 
     exporter = MarkdownExporter()
 
-    markdown_file, metadata_file = exporter.export_post(post)
+    markdown_file, metadata_file = exporter.export(post)
 
     print("Markdown File:")
     print(markdown_file)
 
-    print("\nMetadata File:")
+    print()
+
+    print("Metadata File:")
     print(metadata_file)
 
 

@@ -5,12 +5,12 @@ DEUS AI - RAG Knowledge Engine
 Retriever responsible for semantic search
 using ChromaDB.
 
-Sprint 2 Scope:
+Sprint 3 Scope
 
 - Load embedding model
 - Embed user query
 - Search ChromaDB
-- Return best matching chunks
+- Return top semantic matches
 """
 
 import chromadb
@@ -34,7 +34,11 @@ class Retriever:
         Load embedding model and ChromaDB.
         """
 
-        print("Loading embedding model...")
+        print("=" * 60)
+        print("DEUS AI Retriever")
+        print("=" * 60)
+        print(f"Loading embedding model: {EMBEDDING_MODEL}")
+        print()
 
         self.model = SentenceTransformer(
             EMBEDDING_MODEL
@@ -51,6 +55,13 @@ class Retriever:
             COLLECTION_NAME
         )
 
+        print(
+            f"Knowledge Base Size: "
+            f"{self.collection.count()} vectors"
+        )
+
+        print()
+
     def search(
         self,
         question: str,
@@ -64,7 +75,7 @@ class Retriever:
                 User question.
 
             top_k:
-                Number of results.
+                Number of semantic matches.
 
         Returns:
             ChromaDB search results.
@@ -75,52 +86,72 @@ class Retriever:
             normalize_embeddings=True,
         ).tolist()
 
-        results = self.collection.query(
+        return self.collection.query(
             query_embeddings=[embedding],
             n_results=top_k,
+            include=[
+                "documents",
+                "metadatas",
+                "distances",
+            ],
         )
-
-        return results
 
 
 def main() -> None:
 
     retriever = Retriever()
 
-    print()
-
-    question = input("Ask DEUS AI: ")
-
-    print()
-
-    results = retriever.search(question)
-
-    print("=" * 60)
-
-    print("Top Matches")
-
-    print("=" * 60)
-
-    documents = results["documents"][0]
-    metadata = results["metadatas"][0]
-    distances = results["distances"][0]
-
-    for index, (doc, meta, distance) in enumerate(
-        zip(documents, metadata, distances),
-        start=1,
-    ):
-
-        print(f"\nResult #{index}")
-
-        print(f"Similarity Score : {1-distance:.4f}")
-
-        print(f"Source           : {meta['source']}")
+    while True:
 
         print()
 
-        print(doc[:350])
+        question = input(
+            "Ask DEUS AI (type 'exit' to quit): "
+        )
 
-        print("-" * 60)
+        if question.lower() == "exit":
+            break
+
+        results = retriever.search(question)
+
+        documents = results["documents"][0]
+        metadatas = results["metadatas"][0]
+        distances = results["distances"][0]
+
+        print()
+        print("=" * 60)
+        print("Top Semantic Matches")
+        print("=" * 60)
+
+        if not documents:
+
+            print("No matching articles found.")
+            continue
+
+        for index, (doc, meta, distance) in enumerate(
+            zip(documents, metadatas, distances),
+            start=1,
+        ):
+
+            similarity = max(
+                0.0,
+                1.0 - distance,
+            )
+
+            print(f"\nResult #{index}")
+            print(f"Similarity : {similarity:.4f}")
+            print(f"Source     : {meta['source']}")
+            print(f"Chunk      : {meta['chunk_id']}")
+            print()
+
+            preview = doc[:400]
+
+            if len(doc) > 400:
+                preview += "..."
+
+            print(preview)
+
+            print("-" * 60)
 
 
 if __name__ == "__main__":

@@ -1,14 +1,15 @@
-
 """
 DEUS AI - RAG Knowledge Engine
 ------------------------------
 
-Stores text embeddings inside ChromaDB.
+Stores semantic embeddings inside ChromaDB.
 
-Sprint 2 Scope:
+Sprint 3 Scope
+
 - Load embedding JSON files
-- Create persistent ChromaDB collection
-- Store vectors with metadata
+- Store embeddings in ChromaDB
+- Skip duplicate vectors
+- Maintain persistent knowledge base
 """
 
 import json
@@ -31,12 +32,14 @@ class VectorDatabase:
 
     def __init__(self) -> None:
         """
-        Initialize persistent ChromaDB client.
+        Initialize the persistent ChromaDB client.
         """
 
         self.client = chromadb.PersistentClient(
             path=str(CHROMA_DIR),
-            settings=Settings(anonymized_telemetry=False),
+            settings=Settings(
+                anonymized_telemetry=False
+            ),
         )
 
         self.collection = self.client.get_or_create_collection(
@@ -60,50 +63,96 @@ class VectorDatabase:
             )
         )
 
+        stored = 0
+
         for chunk in chunks:
 
-            self.collection.add(
-                ids=[
-                    f"{chunk['source']}_{chunk['chunk_id']}"
-                ],
-                documents=[
-                    chunk["text"]
-                ],
-                embeddings=[
-                    chunk["embedding"]
-                ],
-                metadatas=[
-                    {
-                        "source": chunk["source"],
-                        "chunk_id": chunk["chunk_id"],
-                    }
-                ],
+            vector_id = (
+                f"{chunk['source']}_{chunk['chunk_id']}"
             )
 
-        print(
-            f"✔ Stored {len(chunks)} embeddings from {embedding_file.name}"
-        )
+            try:
 
-        return len(chunks)
+                self.collection.add(
+                    ids=[vector_id],
+                    documents=[
+                        chunk["text"]
+                    ],
+                    embeddings=[
+                        chunk["embedding"]
+                    ],
+                    metadatas=[
+                        {
+                            "source": chunk["source"],
+                            "chunk_id": chunk["chunk_id"],
+                        }
+                    ],
+                )
+
+                stored += 1
+
+            except Exception:
+                # Vector already exists.
+                # Ignore duplicates.
+                pass
+
+        return stored
 
     def load_all(self) -> int:
         """
         Load every embedding JSON file.
         """
 
+        embedding_files = sorted(
+            CHUNKS_DIR.glob("*_embeddings.json")
+        )
+
         total = 0
 
-        for file in sorted(
-            CHUNKS_DIR.glob("*_embeddings.json")
+        print("=" * 60)
+        print("DEUS AI Vector Database")
+        print("=" * 60)
+
+        print(
+            f"Embedding files: {len(embedding_files)}"
+        )
+
+        print()
+
+        for index, file in enumerate(
+            embedding_files,
+            start=1,
         ):
 
-            total += self.load_embeddings(file)
+            stored = self.load_embeddings(file)
+
+            total += stored
+
+            if (
+                index <= 5
+                or index == len(embedding_files)
+                or index % 100 == 0
+            ):
+                print(
+                    f"✓ [{index}/{len(embedding_files)}] "
+                    f"{file.name} "
+                    f"({stored} vectors)"
+                )
+
+        print()
+
+        print("=" * 60)
+        print("Vector Database Complete")
+        print("=" * 60)
+
+        print(f"Vectors stored : {total}")
+        print(f"Database count : {self.count()}")
 
         return total
 
     def count(self) -> int:
         """
-        Return total vectors stored.
+        Return the number of vectors stored.
         """
 
         return self.collection.count()
@@ -115,13 +164,13 @@ def main() -> None:
 
     total = db.load_all()
 
-    print("\n============================")
+    print()
+    print("=" * 60)
+    print("Summary")
+    print("=" * 60)
 
-    print(f"Vectors stored: {total}")
-
-    print(f"Database count: {db.count()}")
-
-    print("============================")
+    print(f"Vectors stored : {total}")
+    print(f"Database count : {db.count()}")
 
 
 if __name__ == "__main__":

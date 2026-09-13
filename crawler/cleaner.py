@@ -5,12 +5,12 @@ DEUS AI - Blog Ingestion Pipeline
 Cleaner module responsible for removing unnecessary HTML
 from parsed blog posts.
 
-Sprint 1 Scope:
-- Remove script tags
-- Remove style tags
-- Remove navigation elements
-- Remove footer elements
-- Normalize whitespace
+Sprint 3.5 Scope:
+
+- Clean individual BlogPost objects
+- Clean multiple BlogPost objects
+- Remove unnecessary HTML
+- Prepare content for Markdown export
 """
 
 from bs4 import BeautifulSoup
@@ -30,11 +30,11 @@ class BlogCleaner:
 
         soup = BeautifulSoup(html, "lxml")
 
-        # Remove unwanted elements
+        # Remove unwanted HTML elements
         for tag in soup(["script", "style", "noscript"]):
             tag.decompose()
 
-        # Remove common Blogger layout elements
+        # Remove Blogger layout elements
         for selector in [
             ".sidebar",
             ".header",
@@ -47,7 +47,7 @@ class BlogCleaner:
 
         return str(soup)
 
-    def clean_post(self, post: BlogPost) -> BlogPost:
+    def clean(self, post: BlogPost) -> BlogPost:
         """
         Clean a single BlogPost.
         """
@@ -60,18 +60,46 @@ class BlogCleaner:
 
         return post
 
-    def clean_posts(
+    def clean_all(
         self,
         posts: list[BlogPost],
     ) -> list[BlogPost]:
         """
-        Clean multiple BlogPost objects.
+        Clean every BlogPost in the collection.
         """
 
-        return [
-            self.clean_post(post)
-            for post in posts
-        ]
+        cleaned_posts: list[BlogPost] = []
+
+        total = len(posts)
+
+        print()
+        print("=" * 60)
+        print("DEUS AI Cleaner")
+        print("=" * 60)
+
+        for index, post in enumerate(posts, start=1):
+
+            cleaned_posts.append(
+                self.clean(post)
+            )
+
+            if (
+                index <= 5
+                or index == total
+                or index % 100 == 0
+            ):
+                print(
+                    f"✓ [{index}/{total}] "
+                    f"{post.metadata.title}"
+                )
+
+        print()
+        print("=" * 60)
+        print("Cleaning Complete")
+        print("=" * 60)
+        print(f"Total cleaned posts: {len(cleaned_posts)}")
+
+        return cleaned_posts
 
 
 def main() -> None:
@@ -83,8 +111,13 @@ def main() -> None:
     <html>
         <body>
             <script>alert("hello")</script>
+            <style>body {color:red;}</style>
+
             <h1>Hello DEUS AI</h1>
+
             <p>Cleaner Test</p>
+
+            <noscript>No JavaScript</noscript>
         </body>
     </html>
     """

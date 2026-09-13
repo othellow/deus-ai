@@ -1,0 +1,22 @@
+# What Have I Learned in April 2017?
+
+**Author:** 
+
+**Published:** 2026-09-14
+
+**Categories:** 
+
+**Tags:** 
+
+**Source:** https://blog.billymacdeus.com/
+
+---
+
+April was a month of so much reckonings and thought-provoking situations that happened randomly. Some opportunities have opened which made me learn and has me picked nuggets of wisdom along the way.
+Somehow, one of the best spiritual strengthening happened in this month because of the pastoral visit from Brother EVM of Iglesia Ni Cristo.
+It is also the summer’s peak in the Philippines, leaving me take a shower with a maximum of 7 in a day.
+#1. I learned the Mama Bear effect - that women tend to negotiate more easily than man. And most often than not, women would channel their strength to influence by means of their Mother Love  that is innate in them.
+#2. I learned that speaking-up is both dangerous and liberating. When you speak up either by writing or verbally spoken language, your right to express your opinion (most likely) will be perceived on the state of your mind and mood. Was it triggered because of anger, of caring too much, out of compassion, of sarcasm or just being plainly objective and factual? Whatever those mood buttons were, be ready to face the feedback you’re going to get. In the end, the liberty to convey your thoughts was accomplished.
+#3. I learned the copier machine principle or the "because" principle of Influence. Whenever you reason out and needs to get a result leaning to your side, use the conjunction “because” and provide any reason - it maybe with sense or no sense at all, most often thanks not, you’ll get through it with the results favoring your way.
+#4. The love that never fades is untrue. You may be in love with the person before but as you get to see the flaws and questionable behaviors - normally seethes out in the back of your mind, the “love” you profess may warrant to disintegrate through time. It is now up to your own liking and drive whether you nurture the feelings of love further, or, dwell on the flaws then expect to get out of the friendship or mutual relationship sooner or later.
+~billymacdeus

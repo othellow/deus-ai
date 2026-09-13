@@ -2,28 +2,15 @@
 DEUS AI - Blog Ingestion Pipeline
 ---------------------------------
 
-Blog crawler responsible for downloading raw HTML from
-BillyMacDeus' blog.
-
-Responsibilities:
-- Download HTML pages
-- Handle retries
-- Configure request headers
-- Validate HTTP responses
-- Generate output filenames
-- Save raw HTML
-- Discover article links
-- Return raw HTML
-
-Parsing and content extraction are intentionally handled
-by parser.py to keep responsibilities separate.
+Blog crawler responsible for downloading BillyMacDeus'
+entire Blogger archive.
 """
 
 import logging
 import re
 import time
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -38,10 +25,6 @@ from crawler.config import (
     USER_AGENT,
 )
 
-# ============================================================================
-# Logging Configuration
-# ============================================================================
-
 logging.basicConfig(
     level=LOG_LEVEL,
     format="%(asctime)s | %(levelname)s | %(message)s",
@@ -51,14 +34,8 @@ logger = logging.getLogger(__name__)
 
 
 class BlogCrawler:
-    """
-    Downloads HTML pages from BillyMacDeus' blog.
-    """
 
-    def __init__(self) -> None:
-        """
-        Initialize a reusable HTTP session.
-        """
+    def __init__(self):
 
         self.session = requests.Session()
 
@@ -68,17 +45,9 @@ class BlogCrawler:
             }
         )
 
+    # ----------------------------------------------------------
+
     def generate_filename(self, url: str) -> str:
-        """
-        Generate a safe filename based on the URL.
-
-        Examples:
-            https://blog.billymacdeus.com/
-                -> homepage.html
-
-            https://blog.billymacdeus.com/2025/03/my-post.html
-                -> my-post.html
-        """
 
         parsed = urlparse(url)
 
@@ -87,67 +56,46 @@ class BlogCrawler:
         if not path:
             return "homepage.html"
 
-        filename = path.split("/")[-1]
+        filename = path.replace("/", "-")
 
         if not filename.endswith(".html"):
-            filename = f"{filename}.html"
+            filename += ".html"
 
-        # Replace unsafe filename characters
         filename = re.sub(r"[^a-zA-Z0-9._-]", "_", filename)
 
         return filename
 
-    def save_raw_html(self, html: str, filename: str) -> Path:
-        """
-        Save downloaded HTML into the raw data directory.
+    # ----------------------------------------------------------
 
-        Args:
-            html:
-                Raw HTML content.
+    def save_raw_html(
+        self,
+        html: str,
+        filename: str,
+    ) -> Path:
 
-            filename:
-                Output filename.
+        output = RAW_DIR / filename
 
-        Returns:
-            Path to the saved HTML file.
-        """
-
-        output_file = RAW_DIR / filename
-
-        output_file.write_text(
+        output.write_text(
             html,
             encoding="utf-8",
         )
 
-        logger.info("Saved raw HTML to %s", output_file)
+        logger.info("Saved %s", output.name)
 
-        return output_file
+        return output
+
+    # ----------------------------------------------------------
 
     def fetch_page(self, url: str) -> str:
-        """
-        Download a single web page.
 
-        Args:
-            url:
-                URL to download.
-
-        Returns:
-            Raw HTML.
-
-        Raises:
-            requests.RequestException:
-                Raised if all retry attempts fail.
-        """
-
-        for attempt in range(1, MAX_RETRIES + 1):
+        for attempt in range(
+            1,
+            MAX_RETRIES + 1,
+        ):
 
             try:
-                logger.info(
-                    "Fetching %s (Attempt %s/%s)",
-                    url,
-                    attempt,
-                    MAX_RETRIES,
-                )
+
+                logger.info("Fetching %s", url)
 
                 response = self.session.get(
                     url,
@@ -156,82 +104,180 @@ class BlogCrawler:
 
                 response.raise_for_status()
 
-                logger.info("Download successful.")
-
-                filename = self.generate_filename(url)
-
-                self.save_raw_html(
-                    html=response.text,
-                    filename=filename,
-                )
-
                 return response.text
 
             except requests.RequestException as exc:
 
-                logger.warning(
-                    "Attempt %s failed: %s",
-                    attempt,
-                    exc,
-                )
+                logger.warning(exc)
 
                 if attempt == MAX_RETRIES:
-                    logger.error("Maximum retries exceeded.")
                     raise
 
                 time.sleep(RETRY_DELAY)
 
-    def discover_article_links(self, html: str) -> list[str]:
-        """
-        Discover article URLs from the blog homepage.
+    # ----------------------------------------------------------
 
-        Args:
-            html:
-                Raw HTML of the homepage.
+    def discover_article_links(
+        self,
+        html: str,
+    ) -> list[str]:
 
-        Returns:
-            Sorted list of unique article URLs.
-        """
+        soup = BeautifulSoup(
+            html,
+            "lxml",
+        )
 
-        soup = BeautifulSoup(html, "lxml")
+        links = set()
 
-        article_links: set[str] = set()
+        for a in soup.find_all(
+            "a",
+            href=True,
+        ):
 
-        for link in soup.find_all("a", href=True):
+            href = a["href"]
 
-            href = link["href"]
+            if (
+                href.startswith(BLOG_URL)
+                and ".html" in href
+            ):
+                links.add(href)
 
-            if href.startswith(BLOG_URL) and href.endswith(".html"):
-                article_links.add(href)
+        return sorted(links)
 
-        links = sorted(article_links)
+    # ----------------------------------------------------------
 
-        logger.info("Discovered %d article links.", len(links))
+    def discover_next_page(
+        self,
+        html: str,
+    ) -> str | None:
 
-        return links
+        soup = BeautifulSoup(
+            html,
+            "lxml",
+        )
+
+        older = soup.find(
+            "a",
+            class_="blog-pager-older-link",
+        )
+
+        if older:
+
+            return urljoin(
+                BLOG_URL,
+                older["href"],
+            )
+
+        return None
+
+    # ----------------------------------------------------------
+
+    def crawl_archive(self) -> list[str]:
+
+        current = BLOG_URL
+
+        all_articles = set()
+
+        page = 1
+
+        while current:
+
+            logger.info(
+                "Archive Page %s",
+                page,
+            )
+
+            html = self.fetch_page(current)
+
+            links = self.discover_article_links(html)
+
+            all_articles.update(links)
+
+            current = self.discover_next_page(html)
+
+            page += 1
+
+            time.sleep(0.5)
+
+        logger.info(
+            "Discovered %d unique articles.",
+            len(all_articles),
+        )
+
+        return sorted(all_articles)
+
+    # ----------------------------------------------------------
+
+    def download_all_articles(
+        self,
+        urls: list[str],
+    ):
+
+        total = len(urls)
+
+        logger.info(
+            "Downloading %d articles...",
+            total,
+        )
+
+        for index, url in enumerate(
+            urls,
+            start=1,
+        ):
+
+            filename = self.generate_filename(url)
+
+            output = RAW_DIR / filename
+
+            if output.exists():
+
+                logger.info(
+                    "[%d/%d] Skipping %s",
+                    index,
+                    total,
+                    filename,
+                )
+
+                continue
+
+            html = self.fetch_page(url)
+
+            self.save_raw_html(
+                html,
+                filename,
+            )
+
+            time.sleep(0.5)
+
+        logger.info("Download complete.")
 
 
-def main() -> None:
-    """
-    Manual test for the crawler.
-    """
+def main():
 
     crawler = BlogCrawler()
 
-    html = crawler.fetch_page(BLOG_URL)
+    urls = crawler.crawl_archive()
 
-    links = crawler.discover_article_links(html)
+    print()
 
-    print("\nDiscovered Articles\n")
+    print("=" * 60)
+    print("BLOG ARCHIVE")
+    print("=" * 60)
 
-    for index, link in enumerate(links, start=1):
-        print(f"{index:02d}. {link}")
+    print(f"Articles discovered : {len(urls)}")
 
-    print(f"\nTotal articles discovered: {len(links)}")
+    print()
+
+    crawler.download_all_articles(urls)
+
+    print()
+
+    print("=" * 60)
+    print("CRAWL COMPLETE")
+    print("=" * 60)
 
 
 if __name__ == "__main__":
     main()
-
 
     

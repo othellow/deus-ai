@@ -1,0 +1,47 @@
+[
+    {
+        "chunk_id": 0,
+        "source": "ios-13-2-released-most-stable-version-of-ios-13-yet.md",
+        "text": "# iOS 13.2 Released - Most Stable Version of iOS 13 Yet\n\n**Author:** \n\n**Published:** 2026-09-14\n\n**Categories:** \n\n**Tags:** \n\n**Source:** https://blog.billymacdeus.com/\n\n---\n\nYow Yow Yow!\niOS 13's latest update has been released -13.2\nLots of stability, emojis and cool beans spilling-out.\nApple's Key Notes on this release:\niOS 13.2 introduces Deep Fusion, an advanced image processing system that uses the A13 Bionic Neural Engine to capture images with dramatically better texture, detail, and r"
+    },
+    {
+        "chunk_id": 1,
+        "source": "ios-13-2-released-most-stable-version-of-ios-13-yet.md",
+        "text": " uses the A13 Bionic Neural Engine to capture images with dramatically better texture, detail, and reduced noise in lower light, on ‌iPhone 11‌,\niPhone 11 Pro\n, and\niPhone 11 Pro Max\n. Additional features include updated and additional emoji, Announce Messages for ‌AirPods‌, support for ‌AirPods Pro‌, ‌HomeKit‌ Secure Video, ‌HomeKit‌ enabled routers, and new ‌Siri‌ privacy settings. This update also contains bug fixes and improvements.\nCamera\n- Deep Fusion for ‌iPhone 11‌, ‌iPhone 11 Pro‌, and "
+    },
+    {
+        "chunk_id": 2,
+        "source": "ios-13-2-released-most-stable-version-of-ios-13-yet.md",
+        "text": "lso contains bug fixes and improvements.\nCamera\n- Deep Fusion for ‌iPhone 11‌, ‌iPhone 11 Pro‌, and ‌iPhone 11 Pro Max‌ uses the A13 Bionic Neural Engine to capture multiple images at various exposures, run a pixel-by-pixel analysis, and fuse the highest quality parts of the images together resulting in photos with dramatically better texture, details, and reduced noise, especially for mid to low light scenes\n- Ability to change the video resolution directly from the Camera app for ‌iPhone 11‌, "
+    },
+    {
+        "chunk_id": 3,
+        "source": "ios-13-2-released-most-stable-version-of-ios-13-yet.md",
+        "text": "light scenes\n- Ability to change the video resolution directly from the Camera app for ‌iPhone 11‌, ‌iPhone 11 Pro‌, and ‌iPhone 11 Pro Max‌\nEmoji\n- Over 70 new or updated emoji, including animals, food, activities, new accessibility emoji, gender neutral emoji, and skin tones selection for couple emoji\n‌AirPods‌ support\n- Announce Messages with ‌Siri‌ to read your incoming messages aloud to your ‌AirPods‌\n- ‌AirPods Pro‌ support\nHome App\n- ‌HomeKit‌ Secure Video enables you to privately capture"
+    },
+    {
+        "chunk_id": 4,
+        "source": "ios-13-2-released-most-stable-version-of-ios-13-yet.md",
+        "text": "‌AirPods‌\n- ‌AirPods Pro‌ support\nHome App\n- ‌HomeKit‌ Secure Video enables you to privately capture, store, and view encrypted video from your security cameras and features people, animal, and vehicle detection\n- ‌HomeKit‌ enabled routers put you in control of what your ‌HomeKit‌ accessories communicate with over the internet or in your home\n‌Siri‌\n- Privacy settings to control whether or not to help improve ‌Siri‌ and Dictation by allowing Apple to store audio of your ‌Siri‌ and Dictation inte"
+    },
+    {
+        "chunk_id": 5,
+        "source": "ios-13-2-released-most-stable-version-of-ios-13-yet.md",
+        "text": "help improve ‌Siri‌ and Dictation by allowing Apple to store audio of your ‌Siri‌ and Dictation interactions\n- Option to delete your ‌Siri‌ and Dictation history from ‌Siri‌ Settings\nThis update also includes bug fixes and other improvements. This update:\n- Fixes an issue that may prevent passwords from autofilling in 3rd party apps\n- Resolves an issue that may prevent the keyboard from appearing when using Search\n- Addresses an issue where swipe to go home might not work on iPhone X and later\n-"
+    },
+    {
+        "chunk_id": 6,
+        "source": "ios-13-2-released-most-stable-version-of-ios-13-yet.md",
+        "text": "when using Search\n- Addresses an issue where swipe to go home might not work on iPhone X and later\n- Fixes an issue where Messages would only send a single notification when the option to repeat alerts was enabled\n- Addresses an issue where Messages may display a phone number instead of a contact name\n- Resolves an issue that caused Contacts to launch to the previously opened contact instead of the contact list\n- Fixes an issue that may prevent Markup annotations from being saved\n- Resolves an i"
+    },
+    {
+        "chunk_id": 7,
+        "source": "ios-13-2-released-most-stable-version-of-ios-13-yet.md",
+        "text": "e contact list\n- Fixes an issue that may prevent Markup annotations from being saved\n- Resolves an issue where saved notes could temporarily disappear\n- Fixes an issue where\niCloud\nBackup might not successfully complete after tapping Backup Now in Settings\n- Improves performance when using AssistiveTouch to activate App Switcher\nIt's around 4GB... so, go ahead and hit the software update button on your iDevices.\n-billymacdeus\n"
+    },
+    {
+        "chunk_id": 8,
+        "source": "ios-13-2-released-most-stable-version-of-ios-13-yet.md",
+        "text": " your iDevices.\n-billymacdeus\n"
+    }
+]

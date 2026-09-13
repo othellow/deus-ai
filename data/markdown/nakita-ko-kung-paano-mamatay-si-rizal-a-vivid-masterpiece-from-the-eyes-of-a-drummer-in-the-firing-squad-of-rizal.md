@@ -1,0 +1,38 @@
+# Nakita Ko Kung Paano Mamatay Si Rizal (A Vivid Masterpiece From The Eyes  Of A Drummer In The Firing Squad Of Rizal)
+
+**Author:** 
+
+**Published:** 2026-09-14
+
+**Categories:** 
+
+**Tags:** 
+
+**Source:** https://blog.billymacdeus.com/
+
+---
+
+This was sent to me through a groupchat today, my personal experience is quite heart-wrenching because when i was reading the account, it felt like i was there - witnessing the scene of how our beloved hero embraced his death.
+Nanikip ang dibdib ko habang tinatapos ko ang artikulong ito. Nanariwa ang pag-ibig muli sa ating bansa at sa mga kabutihan at kabayanihang ipinakita ng ating pambansang bayani.
+click to enlarge
+"I SAW RIZAL DIE"
+There is one eyewitness to Rizal’s execution whose observation was told to a journalist in 1949, or 53 years after the event. A man named Hilarion Martinez, then 72 years old, relayed to Alberto Mendoza of the Sunday Times Magazine what he witnessed during Rizal’s execution.
+In 1896, a then 20-year old Martinez was a member of the Leales Voluntarios de Manila (Loyal Volunteers of Manila) and was assigned to the drum corps. Martinez and his fellow drum corps members accompanied the condemned man from the time he left Fort Santiago until he reached Bagumbayan. Because of his role in the drum corps, it is said that he occupied a good vantage point from which to observe the execution. Martinez’ complete account is reproduced below:
+“It was six o’clock in the morning of December 30, 1896, when we woke up at our quarters at the corner of Sta. Potenciana and Magallanes Streets, in Intramuros, to attend the execution of Jose Rizal, about which we had been briefed the day before. We were in the Leales Voluntarios de Manila, a semi-military organization under the command of Capt. Manuel Leaño. Our immediate officer was a youthful Spanish lieutenant named Juan Pereira. I was twenty years old then, and a member of the drum corps.
+“We marched out of Intramuros through the Puerta Real, or where Nozaleda (now General Luna) Street out through the walls on the south, clad in our cañamo uniforms and with our cajas vivas strapped around our waists. We proceeded to what is now Padre Burgos Street, under an overcast sky and a biting December morn.
+“Bagumbayan is not the Luneta now. The waters of Manila Bay still reached the other side of Malecon Drive (now Bonifacio Drive) where the new Luneta is located. The Luneta of those days was as far back as the site of the old Bagumbayan police station, near which lush bamboo thickets grew.
+“As we rounded the corner of P. Burgos and General Luna Streets, we got a glimpse of the cuadro, a square formation of about ten companies of Filipino and Spanish soldiers. The former occupied the inner portion of the quadrangle, while the latter were at the rear. This formation was strategic because the Filipino soldiers’ position within the cuadro signified that the Spanish authorities wanted Rizal to die in the hands of the Filipino soldiers. If the latter disobeyed the command to fire upon Rizal, the Spanish soldiers positioned at the rear would fire upon them.
+“There were civilian spectators, too. The side of the cuadro near the bay was open.
+“As we approached the quadrangle, we saw some Spanish military officers earnestly talking in low voices. Rizal was nowhere to be seen – yet. Not having had a glimpse of the man before, I began to wonder what he looked like. I remembered how my mother told me Rizal was so learned, nobody could poison him as he always carried with him his own spoon and fork with which he could detect whether his food was poisoned or not. I heard too, of his fighting for our (Filipino) cause aside from legends that were beginning to be woven around him.
+“Soon the small crowd heard the muffle sound of our approaching vivas draped with black cloth during execution ceremonies. A slight commotion broke out at the right end of the cuadro near the bay as some soldiers with fixed bayonets entered followed by a man in black, his arms tied at the elbows from the back, on his head, a derby hat or chistera, on his sides, a Spanish officer and a Jesuit priest.
+“When I saw the man, I knew he was Rizal.
+“A group of Spanish officers who were standing nearby opened into a semicircular formation or media luna. Then a Spaniard (we would learn later he was Lt. Luis Andrade, one of Rizal’s popular Spanish defenders and sympathizers) affectionately shook the latter’s hand. When Rizal was near the center of the quadrangle, the mayor de la plaza, a colonel, announced at the bandillo: “En el nombre del Rey, el que se levante la voz a favor del reo sera ejecutado.” (In the name of the King, he who raises his voice in favor of the criminal will be executed.)
+“A deep silence enshrouded the whole assembly.
+“We in the drum corps were about seven paces behind Rizal who then faced the bay. Our commanding officer approached us and told us should Rizal attempt to speak aloud, we should beat our drums hard to drown out his voice. I looked at Rizal. He was of regular build, unshaven, quite pale, perhaps as a result of his confinement but he was visibly composed and serene. A Jesuit approached him, said a prayer and blessed him. Then a colonel approached him too, as our commanding officer ordered us to move two paces backwards, and the firing squad of six Filipinos came forward and took our former position behind Rizal. With visible effort, Rizal raised his right hand which was tied and took off his chistera or derby hat. My heart beat fast, as in all other executions I had witnessed before, I felt tense and nervous. Amidst the silence, Rizal moved his head very slowly up and down, his lips moving as if in prayer.
+“Then the commanding officer by means of his saber, signaled the firing squad to aim. Then the saber dropped and there was a simultaneous crack of rifle fire that shattered the stillness of the morning. Jose Rizal wheeled in one last effort and toppled forward with a thud, his face towards the sky and his derby hat thrown ahead. He had fallen in the direction of the bay.
+“Many of the reos [condemned criminals] had been caused to kneel and be hoodwinked before they were shot on the head. But Rizal was spared that humiliation.
+“Suddenly, as if from nowhere, a small dog appeared and ran in circles around Rizal’s fallen body, barking and whimpering. This incident would much later be the subject of our talk in our quarters. Some of my comrades were quick to conclude that it was a premonition of a coming misfortune.
+“Then the capitan militar de la sanidad (medical officer) stepped forward, knelt before the fallen man, and felt his pulse. Looking up, he beckoned to a member of the firing squad to come forward and give the final tiro de gracia, another shot done at close range. I thought I saw a faint haze rise from Rizal’s coat, but it might be a wisp of the morning mist. Seeing the body before me, I felt weak.
+“The officers began to show animation again. They fell in formation and marched to the tune of the Spanish national air, the Paso Doble Marcha de Cadiz.
+“As was customary in past executions, we filed past the body to view it for the last time. When we were commanded ‘eyes left,’ I did not shut my eyes as I did at the sight of the several reos whose heads were blown off by rifle fire. I wanted to see the face of the man for one last time. Rizal lay dead on the dewy grass. The day had started and I realized that I was gazing on the face of the great Malayan; that I was witnessing history in the making.”
+[Source: Alberto Mendoza, “I saw Rizal Die,” Sunday Times Magazine 29 December 1949, pp. 10-11.] |Emil Justimba

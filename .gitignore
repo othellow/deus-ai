@@ -24,3 +24,22 @@ htmlcov/
 
 # Environment variables
 .env
+
+# Virtual Environment
+.venv/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Environment Variables
+.env
+
+# macOS
+.DS_Store
+
+# Logs
+logs/
+
+# Chroma Database
+data/chroma/

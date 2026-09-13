@@ -11,9 +11,11 @@ on:
 
 jobs:
   test:
+
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout Repository
         uses: actions/checkout@v4
 
@@ -27,11 +29,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Verify Python Version
-        run: python --version
-
-      - name: Run Tests
+      - name: Run Unit Tests
         run: |
           pytest
+
+      - name: Run Knowledge Pipeline
+        run: |
+          python -m pipeline.ingest
 
           

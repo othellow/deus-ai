@@ -1,0 +1,27 @@
+# How Would You Know If Someone Loves You?
+
+**Author:** 
+
+**Published:** 2026-09-14
+
+**Categories:** 
+
+**Tags:** 
+
+**Source:** https://blog.billymacdeus.com/
+
+---
+
+"When marrying, ask yourself this question: Do you believe that you will be able to converse well with this person into your old age? Everything else in marriage is transitory."
+Friedrich Nietzsche
+Okay stop right there. Your eyebrows are arching already. A close friend PM
+ed
+me asking ...
+how do you know if someone loves you? can you tell if inlab na sayo yung tao?
+Without question and beyond doubt, she was referring to a romantic kind of love. I'm no expert when it comes to love and romantic relationships. I only had a few romantic relationship experiences; can be counted in the fingers, so when i tried to answer her question, my thoughts are not in a solitary expression, so i rested my fingers from typing on my keyboard and procrastinated in replying her back.
+Hours passed and i'm infront of my screen again, trying to compose and gather my thoughts about the private message. My mind still in chaos, i can't really start my reply, and as if i cannot form the words trying to pop in my head on how to expound and give a clear and sound advice..
+So i turned to my blog and here am i. I'd like you to share your thoughts re the above simple inquiry. When it comes to love topic, each of us has their own say, but my opinion really is, when it comes to love in relation to the question above,
+Love attains its true meaning between the two involved persons when there is a sincere affirmation of vows
+(i'm not talking about marriage vows)- i'm referring to the expression  of a passionate "i love you" (mostly from the males) and the romantically inclined answer of "i love you too" (from the females). Without those beautiful, emotive and definitive exchange of discourse, love, i guess wouldn't come in full circle. Despite the actions that depict love; despite the fact that action speaks louder than words. When it comes to love, there must be a full closure of verbal communication. Nonetheless, it'd just be an unfinished business - that creates an aftermath of someone hanging on the air. (that situation is kinda hard, isnt it?)
+How about you? if you just dropped by on this blog and reading, might as well share your thoughts, I'm hoping that your responses would give peace and sobriety if not enlightenment to the really simple  yet meaningful question posted. Ciao.
+~mAc

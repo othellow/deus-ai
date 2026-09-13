@@ -5,11 +5,12 @@ DEUS AI - RAG Knowledge Engine
 Embedding module responsible for converting text chunks
 into semantic vectors using Sentence Transformers.
 
-Sprint 2 Scope:
+Sprint 3 Scope:
+
 - Load embedding model
 - Read chunk JSON files
-- Generate embeddings
-- Save embeddings as JSON
+- Generate semantic embeddings
+- Save embedding JSON files
 """
 
 import json
@@ -33,7 +34,11 @@ class EmbeddingGenerator:
         Load the embedding model once.
         """
 
+        print("=" * 60)
+        print("DEUS AI Embedding Generator")
+        print("=" * 60)
         print(f"Loading model: {EMBEDDING_MODEL}")
+        print()
 
         self.model = SentenceTransformer(
             EMBEDDING_MODEL
@@ -44,7 +49,7 @@ class EmbeddingGenerator:
         text: str,
     ) -> list[float]:
         """
-        Generate an embedding for one text.
+        Generate an embedding for a text chunk.
         """
 
         embedding = self.model.encode(
@@ -74,53 +79,81 @@ class EmbeddingGenerator:
                 chunk["text"]
             )
 
-        output = chunk_file.with_name(
+        output_file = chunk_file.with_name(
             chunk_file.stem + "_embeddings.json"
         )
 
-        output.write_text(
+        output_file.write_text(
             json.dumps(
                 chunks,
                 indent=4,
+                ensure_ascii=False,
             ),
             encoding="utf-8",
-        )
-
-        print(
-            f"✔ Embedded {chunk_file.name}"
         )
 
         return len(chunks)
 
     def process_all(self) -> int:
         """
-        Process every chunk JSON.
+        Process every chunk JSON file.
         """
 
-        total = 0
+        chunk_files = sorted(
+            [
+                file
+                for file in CHUNKS_DIR.glob("*.json")
+                if not file.name.endswith("_embeddings.json")
+            ]
+        )
 
-        for chunk_file in sorted(
-            CHUNKS_DIR.glob("*.json")
-        ):
+        total_embeddings = 0
 
-            total += self.process_file(
+        print(f"Chunk files found: {len(chunk_files)}")
+        print()
+
+        for index, chunk_file in enumerate(chunk_files, start=1):
+
+            count = self.process_file(
                 chunk_file
             )
 
-        return total
+            total_embeddings += count
+
+            if (
+                index <= 5
+                or index == len(chunk_files)
+                or index % 100 == 0
+            ):
+                print(
+                    f"✓ [{index}/{len(chunk_files)}] "
+                    f"{chunk_file.name} "
+                    f"({count} embeddings)"
+                )
+
+        print()
+        print("=" * 60)
+        print("Embedding Complete")
+        print("=" * 60)
+        print(f"Total embeddings generated: {total_embeddings}")
+
+        return total_embeddings
 
 
 def main() -> None:
+    """
+    Manual embedding test.
+    """
 
     generator = EmbeddingGenerator()
 
     total = generator.process_all()
 
-    print("\n=========================")
-
+    print()
+    print("=" * 60)
+    print("Summary")
+    print("=" * 60)
     print(f"Embeddings generated: {total}")
-
-    print("=========================")
 
 
 if __name__ == "__main__":

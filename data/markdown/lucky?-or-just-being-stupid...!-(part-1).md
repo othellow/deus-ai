@@ -1,0 +1,60 @@
+# Lucky? or just being Stupid...! (part 1)
+
+**Author:** 
+
+**Published:** 2026-09-14
+
+**Categories:** 
+
+**Tags:** 
+
+**Source:** https://blog.billymacdeus.com/
+
+---
+
+I
+dunno how to start this but i'm pressing on time to have this blog written and be posted before 12 midnight GMT. (hehehe). Gotta confess that i didn't get a sound sleep last night because i incidentally messed up my Iphone.
+Let's put it this way, i was busy scrolling
+twitter
+(follow me uh-oh!) on my lappy last night (prolly, 9:30pm) when i came accross with the post about jailbreaking iphone 3GS untethered (oh well, i've seen such post from a tweet friend earlier that day and just ignored it, although i was tempted to try it).
+Now came this opportunity again to give it a try!
+So i  re run a quick calculation on my current specs and history.
+- i'm pretty damned sure the OS ver i got originally is 3.1.2 (i saw it back in my settings)
+- of which the night i bought my iphone, i bravedly jailbroken it via
+blackra!n
+- and so far it was a no-fuss (just chicken thing), Yup i did it by myself after reading some 3 posts from the
+iphone dev-team
+, ending my first jailbreak as a success
+- later then that i realized,
+that the blackra!n jailbreak for the iphone 3GS is a tethered one
+, hackers said that we have to wait further for the release of the untethered jailbreak for the 3.1.2
+- then Apple released the OS ver 3.1.3 (of which whenever i connect my iPhone to the usb cable with iTunes opened up, it's always asking me to UPGRADE to the latest OS, luckily i've always clicked NO or prolly CANCEL whenever this msg pops up!), well i got warned by my friend Bernard who's back in Pinas never to click UPGRADE cuz it's gonna upgrade my iPhone to the latest baseband. (hell yeah! i never knew what the heck was it or what's the effect till i experienced doing it, hehehe, just to add, i didnt have idea what was my baseband after i purchased it)
+After that quick mental reminiscence of thy history, i went to the
+spirit website
+and read through the post. These are the things that has imprinted on my mind after digesting it:
+- unTethered Jailbreak (Oh wow! sure! i got excited!)
+- it's the latest official OS ver (well, aside from the fact about the beta version of the OS4.0- that supports multi-tasking abilities)
+- enhances battery life or prolly, Prolongs???!
+And the long moment is beyond from over....
+- so i downloaded the windows version for Spirit jailbreak
+- right clicked the app, got to Compatibility Tab and put a tick mark to "set as compatible to windows 98"
+- then i pressed the Jailbreak button
+- unfortunately, the Jailbreak has succeeded (as it showed feedback on my laptop screen) but my Iphone 3GS rebooted and just went to the Synching mode (like the Connect to Itunes image) and it got stucked there.
+- my mind still composed, i waited further for the lock screen to appear but it seems a decade and it's still nothing
+- so i disconnected my usb cable and closed Itunes. Reconnected my cable and opened Itunes back, it has now detected my iPhone, now telling me to UPGRADE....
+The critical part... that is-
+- i know, it has been a habit to click NO/CANCEL when ever i see the message asking for the UPGRADE but my gut feeling is telling me to click it that time! (hah! i re read the spirit post, and got convinced that i really need to click UPGRADE, why?
+it tells:
+If you currently are using a
+tethered
+jailbreak, you have to restore to use Spirit.
+Do not upgrade
+if you use an unlock on an iPhone 3G or 3GS. (You can, however, restore to 3.1.2 if you have SHSH blobs for that version.)
+On my case, i have to click UPGRADE inorder for me to complete the RESTORE which has discussed by
+spirit
+.. nevertheless, i clicked UPGRADE and waited for almost 30 minutes to complete the UPGRADE and RESTORE process. (well i didnt have a choice! if i wanted to RESTORE, i have to get pass thru that UPGRADE process first so i got convinced to click UPGRADE).
+it was like a feel of super cold water splashed on my whole body when i spotted the words from the spirit post about "spirit is not a carrier lock"
+and So! the white thin line that goes from left to right on my iphone is almost over ... like 99% and Itunes is saying... it's gonna reboot in 9 seconds... 8...7... 6... 5... 4... 3... 2... 1...
+(to be continued.....)
+"A first IMPULSE was never a crime"
+~ Pierre Corneille

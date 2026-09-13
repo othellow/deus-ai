@@ -1,0 +1,30 @@
+# 5 Best Practices in Lessening Supervisor Calls (SUP CALL)
+
+**Author:** 
+
+**Published:** 2026-09-14
+
+**Categories:** 
+
+**Tags:** 
+
+**Source:** https://blog.billymacdeus.com/
+
+---
+
+As a customer, you would feel insignificant or simply unserved whenever a prolonged loop of resolution is always thrown to your queries and complaints. It is best to understand what went wrong despite putting all the necessary efforts, reverse psychology and other strategic tactics just to straighten up the issues and get what you wanted. Assuming, most of the above points  were covered and you simply just doesn't want to give up in getting the perfect satisfaction; might as well ask - I'd like to speak to your supervisor!
+That statement must be the dreaded level in a call for all service representatives in the call center industry. Yet, there are numerous ways on how to cut the rope before the heat gets in there. Below are 5 best practices in reducing sup calls.
+1. Take ownership of the customer and the call.
+Immediately provide assurance and obviously tell the customer that you're owning her case once the problem has been stated and established. This will add a factor of confidence from the customer of what you can do and beyond.
+2. Set expectations
+Probably this is always being overlooked by most representatives, but in most ways, this is actually a great equalizer. It's also an effective "cover your ass" strategy so long that you convey with utmost clarity and charisma. It's always a rule of the thumb to set expectations after you and the customer have  come to terms on what the problem is all about.
+3. Always sound confident
+Your voice is one primary asset when talking to the customer. Although, accent and fluency are all subjective, it's always a win win scenario when you can match the pace and mood of the customer. It'll always create a good vibe and a feeling of mutual attachment from the other end when you're confident on what you're saying.
+4. Be professional but always personalize the call
+This may sound contradicting but the formula is actually easy: Personalize your calls by simply being you (inject a thought provoking situation which  you think & feel that could lead to a great chit-chat) without red flagging your QA guidelines or policies.
+5. Be Proactive to offer your Supervisor
+It would be useless if you're fighting to the customer just so she will give up in getting your sup on the phone. It's the customer's right anyway to talk to a sup if she want to. From the deepest recesses of your mind, you'd feel it when it's coming, and to counter that, don't say "let me check with my supervisor" instead, "my Supervisor would be happy to assist you". That way, you'd be much more a
+pro
+in the eyes of the customer.
+Don't ever feel guilty whenever a customer is asking for a supervisor. This oftentimes happen when you're trying to establish the rules and policies of which the customer wouldn't want to accept. As they've said, you can't always please everyone. To reflect and to think back what could you have done better in turning that sup call into a praise call, is a great tactic to improve. You will know and you will always analyze the two sides of the coin what went wrong with it and how you could have made it to be a satisfied customer.
+posted by MAC

@@ -5,9 +5,10 @@ DEUS AI - RAG Knowledge Engine
 Chunker responsible for splitting Markdown documents
 into overlapping chunks for semantic search.
 
-Sprint 2 Scope:
-- Read Markdown files
-- Split into chunks
+Sprint 3 Scope:
+
+- Read all Markdown files
+- Split into overlapping chunks
 - Save chunk JSON files
 """
 
@@ -29,13 +30,6 @@ class Chunker:
     ) -> None:
         """
         Initialize chunking parameters.
-
-        Args:
-            chunk_size:
-                Maximum number of characters per chunk.
-
-            overlap:
-                Number of overlapping characters.
         """
 
         self.chunk_size = chunk_size
@@ -57,9 +51,7 @@ class Chunker:
 
             end = start + self.chunk_size
 
-            chunk = text[start:end]
-
-            chunks.append(chunk)
+            chunks.append(text[start:end])
 
             start += self.chunk_size - self.overlap
 
@@ -77,11 +69,11 @@ class Chunker:
             encoding="utf-8",
         )
 
-        chunks = self.split_text(text)
+        pieces = self.split_text(text)
 
         output = []
 
-        for index, chunk in enumerate(chunks):
+        for index, chunk in enumerate(pieces):
 
             output.append(
                 {
@@ -95,7 +87,7 @@ class Chunker:
 
     def process_all(self) -> int:
         """
-        Process every Markdown file.
+        Process every Markdown document.
         """
 
         markdown_files = sorted(
@@ -104,7 +96,13 @@ class Chunker:
 
         total_chunks = 0
 
-        for markdown_file in markdown_files:
+        print("=" * 60)
+        print("DEUS AI Chunker")
+        print("=" * 60)
+        print(f"Markdown files: {len(markdown_files)}")
+        print()
+
+        for index, markdown_file in enumerate(markdown_files, start=1):
 
             chunks = self.process_markdown(
                 markdown_file
@@ -124,12 +122,24 @@ class Chunker:
                 encoding="utf-8",
             )
 
-            print(
-                f"✔ {markdown_file.name} → "
-                f"{len(chunks)} chunks"
-            )
-
             total_chunks += len(chunks)
+
+            if (
+                index <= 5
+                or index == len(markdown_files)
+                or index % 100 == 0
+            ):
+                print(
+                    f"✓ [{index}/{len(markdown_files)}] "
+                    f"{markdown_file.name} "
+                    f"({len(chunks)} chunks)"
+                )
+
+        print()
+        print("=" * 60)
+        print("Chunking Complete")
+        print("=" * 60)
+        print(f"Total chunks created: {total_chunks}")
 
         return total_chunks
 
@@ -143,12 +153,14 @@ def main() -> None:
 
     total = chunker.process_all()
 
-    print("\n===============================")
-
-    print(f"Total chunks created: {total}")
-
-    print("===============================")
+    print()
+    print("=" * 60)
+    print("Summary")
+    print("=" * 60)
+    print(f"Chunks created: {total}")
 
 
 if __name__ == "__main__":
     main()
+
+    
