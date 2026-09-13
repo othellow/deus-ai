@@ -1,11 +1,22 @@
 """
-DEUS AI - Blog Ingestion Pipeline
---------------------------------
-Configuration settings for the blog crawler.
+DEUS AI
+-------
 
-This module centralizes all configurable values used throughout
-the ingestion pipeline, making the application easier to maintain,
-test, and extend.
+Centralized configuration for the DEUS AI project.
+
+This module contains:
+
+- Project paths
+- Blog configuration
+- Network settings
+- Scheduler settings
+- Chunking settings
+- RAG settings
+- ChromaDB settings
+- Logging configuration
+
+Keeping configuration in one place makes the application
+easier to maintain and extend across future sprints.
 """
 
 from pathlib import Path
@@ -14,7 +25,7 @@ from pathlib import Path
 # Project Paths
 # ============================================================================
 
-# Base directory of the project (deus-ai/)
+# Root directory of the project (deus-ai/)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Data directories
@@ -24,8 +35,9 @@ CLEANED_DIR = DATA_DIR / "cleaned"
 MARKDOWN_DIR = DATA_DIR / "markdown"
 METADATA_DIR = DATA_DIR / "metadata"
 CHUNKS_DIR = DATA_DIR / "chunks"
+CHROMA_DIR = DATA_DIR / "chroma"
 
-# Log directory
+# Logs
 LOG_DIR = BASE_DIR / "logs"
 
 # ============================================================================
@@ -37,7 +49,7 @@ BLOG_NAME = "BillyMacDeus Blog"
 BLOG_URL = "https://blog.billymacdeus.com/"
 
 USER_AGENT = (
-     "DEUS-AI-BlogCrawler/1.0 "
+    "DEUS-AI-BlogCrawler/1.0 "
     "(Quantic MSSE Capstone Project; "
     "https://github.com/othellow/deus-ai)"
 )
@@ -59,7 +71,7 @@ RETRY_DELAY = 5  # seconds
 CRAWL_INTERVAL_DAYS = 7
 
 # ============================================================================
-# Chunking Configuration (Future Sprint)
+# Chunking Configuration
 # ============================================================================
 
 CHUNK_SIZE = 500
@@ -67,7 +79,21 @@ CHUNK_SIZE = 500
 CHUNK_OVERLAP = 100
 
 # ============================================================================
-# Logging
+# RAG Configuration
+# ============================================================================
+
+EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+
+EMBEDDING_BATCH_SIZE = 32
+
+# ============================================================================
+# ChromaDB Configuration
+# ============================================================================
+
+COLLECTION_NAME = "deus_ai_blog"
+
+# ============================================================================
+# Logging Configuration
 # ============================================================================
 
 LOG_FILE = LOG_DIR / "crawler.log"
@@ -85,9 +111,11 @@ DIRECTORIES = [
     MARKDOWN_DIR,
     METADATA_DIR,
     CHUNKS_DIR,
+    CHROMA_DIR,
     LOG_DIR,
 ]
 
 for directory in DIRECTORIES:
     directory.mkdir(parents=True, exist_ok=True)
 
+    
